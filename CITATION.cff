@@ -3,6 +3,7 @@ message: Please cite the paper; this distribution supplies its source and finite
 type: software
 title: "Perfect play with spatial quantum strategies is Σ⁰₂-complete"
 version: 1.0.0
+doi: '10.5281/zenodo.23910987'
 date-released: '2026-11-03'
 license:
 - CC-BY-4.0
@@ -36,6 +37,7 @@ preferred-citation:
     orcid: https://orcid.org/0009-0005-6534-1118
   year: 2026
   version: 1.0.0
+  doi: '10.5281/zenodo.23910987'
   notes: 'Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md.'
 references:
 - type: generic
