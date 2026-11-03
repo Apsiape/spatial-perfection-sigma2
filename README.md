@@ -1,6 +1,6 @@
 # Perfect play with spatial quantum strategies is Σ⁰₂-complete
 
-Seth Douglas and Nidhal Mghirbi. Version 1.1.0, November 2026. Concept DOI (all versions): [10.5281/zenodo.23910986](https://doi.org/10.5281/zenodo.23910986). Version 1.0.0: [10.5281/zenodo.23910987](https://doi.org/10.5281/zenodo.23910987).
+Seth Douglas and Nidhal Mghirbi. Version 1.1.0, November 2026. Concept DOI (all versions): [10.5281/zenodo.23910986](https://doi.org/10.5281/zenodo.23910986). Version 1.0.0: [10.5281/zenodo.23910987](https://doi.org/10.5281/zenodo.23910987). Version 1.1.0: [10.5281/zenodo.23929983](https://doi.org/10.5281/zenodo.23929983).
 
 **This is a preprint. It has not been peer reviewed.**
 
