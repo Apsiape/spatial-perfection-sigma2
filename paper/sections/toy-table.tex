@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}cc|cccccccc|c@{}}
+\toprule $y$&pulse&0&1&2&3&4&5&6&7&update mask\\\midrule
+0&1&s&b&b&b&b&b&b&b&1\\
+1&0&d&f&b&b&b&b&b&b&1\\
+2&0&d&d&f&b&b&b&b&b&1\\
+3&1&d&d&d&f&b&b&b&b&1\\
+4&0&d&d&d&m&b&b&b&b&1\\
+5&0&d&d&d&m&b&b&b&b&1\\
+6&1&d&d&d&m&b&b&b&b&1\\
+7&0&d&d&d&m&b&b&b&b&0\\
+\bottomrule
+\end{tabular}
+\caption{Depth $m=3$, period $q=3$: the decoder's $8\times8$ toy tableau.
+$P_x$ marks column 0, $P_{x,\rm last}$ column 7, $P_y$ row 0 and
+$P_{y,\rm last}$ row 7. The last-column neighbour is replaced by blank;
+the last-row mask suppresses the toroidal $7\to0$ update.}\label{tab:toy}
+\end{table}

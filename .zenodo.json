@@ -1,0 +1,43 @@
+{
+  "title": "Perfect play with spatial quantum strategies is Σ⁰₂-complete",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "1.0.0",
+  "publication_date": "2026-11-03",
+  "creators": [
+    {
+      "name": "Douglas, Seth",
+      "orcid": "0009-0007-4708-3252"
+    },
+    {
+      "name": "Mghirbi, Nidhal",
+      "orcid": "0009-0005-6534-1118"
+    }
+  ],
+  "description": "When does a finite nonlocal game admit perfect spatial quantum play? We prove that this decision problem is complete for the second existential level of the arithmetical hierarchy. The same classification holds when a perfect strategy must have finite marginal entropy. Hardness persists among games whose finite-dimensional value is one and which have no finite-dimensional perfect strategy. A finite clock-phase order supplies the existential witness: normality forces a finite order on a nonzero sector, while the strategy chooses the order.\n\nFor the upper bound, we normalize the largest Schmidt coefficient and use compact operator sandwiches. Fixing a lower bound on the largest Schmidt probability gives a co-recursively enumerable stratum. No computable bound selects a sufficient stratum for every game. Exact attainment of a rational Bell bound, of an unspecified supremum, and of a specified scalar value is also Sigma^0_2-complete. The hardness proof extends the modular-shift and rational-row toolkit of our earlier entropy-game paper to four calibrated bridges and a deterministic computation on rooted finite squares.",
+  "keywords": [
+    "nonlocal games",
+    "spatial quantum strategies",
+    "arithmetical hierarchy",
+    "Sigma-2 completeness",
+    "infinite-dimensional quantum strategies",
+    "Bell attainment",
+    "finite entropy"
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "notes": "Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0.",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23902656",
+      "scheme": "doi",
+      "relation": "references"
+    },
+    {
+      "identifier": "10.5281/zenodo.23787124",
+      "scheme": "doi",
+      "relation": "references"
+    }
+  ]
+}

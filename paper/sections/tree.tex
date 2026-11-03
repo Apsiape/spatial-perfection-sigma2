@@ -1,0 +1,139 @@
+\section{The rooted tree and computation squares}\label{sec:tree}
+\subsection{Normality removes every rootless sector}
+Require four isometries and a root projection with
+\begin{equation}\label{eq:fockrelations}
+ A_{ab}^*A_{cd}=\delta_{ac}\delta_{bd}I,\qquad
+ \sum_{ab}A_{ab}A_{ab}^*=I-P_{\circ},\qquad h_0A_{ab}=A_{ab}h_0/16.
+\end{equation}
+Here $h_0$ is a faithful density on the extracted root-corner Hilbert space. For $w=w_1\cdots w_m$ set $A_w=A_{w_1}\cdots A_{w_m}$ (the empty product is $I$) and put $Q_m=\sum_{|w|=m}A_wA_w^*$. Orthogonality and trace cyclicity give $\Tr(h_0Q_m)=4^{-m}$. The projections $Q_m$ decrease. Their strong limit has zero $h_0$-weight, hence is zero by faithfulness. Also $Q_m-Q_{m+1}=\sum_{|w|=m}A_wP_{\circ}A_w^*$. Therefore
+\begin{equation}\label{eq:fockdecomp}
+ \HH=\bigoplus_w A_w\KK\simeq\ell^2(\mathcal W)\otimes\KK,
+ \qquad \KK=P_{\circ}\HH\ne0.
+\end{equation}
+Here $\mathcal W$ denotes finite words in the four-letter alphabet $\{0,1\}^2$. The modular equation makes $h_0$ commute with every $A_wP_{\circ}A_w^*$. Since $\Tr(h_0P_{\circ})=3/4$, transporting its root block gives
+\begin{equation}\label{eq:fockdensity}
+ h_0=h_F\otimes\sigma,\qquad
+ h_F=\frac34\sum_w16^{-|w|}|w\rangle\langle w|,
+ \qquad \Tr\sigma=1.
+\end{equation}
+In particular
+\begin{equation}\label{eq:fockentropy}
+ S(h_F)=\log_2(4/3)+4/3.
+\end{equation}
+Indeed the depth-$m$ mass is $(3/4)4^{-m}$ and its mean depth is $1/3$; the log probability at each word is $\log_2(4/3)+4m$. This proves the formula and excludes a rootless normal summand.
+
+\subsection{Each depth is a finite square}
+For $w=(a_1,b_1)\cdots(a_m,b_m)$ define
+\[
+ x(w)=\sum_{j=1}^m a_j2^{j-1},\qquad
+ y(w)=\sum_{j=1}^m b_j2^{j-1}.
+\]
+The first letter is the least significant bit. Prefixing $A_{ab}$ maps $(x,y)$ to $(2x+a,2y+b)$. Depth $m$ is a $2^m\times2^m$ square. Require centralizer unitaries $U_x,U_y$ and projections $P_x,P_y$ satisfying, for $a,b\in\{0,1\}$,
+\begin{align}
+ U_xA_{0b}&=A_{1b},&U_xA_{1b}&=A_{0b}U_x,&U_xP_{\circ}&=P_{\circ},\label{eq:U_x}\\
+ U_yA_{a0}&=A_{a1},&U_yA_{a1}&=A_{a0}U_y,&U_yP_{\circ}&=P_{\circ},\label{eq:U_y}\\
+ P_xA_{0b}&=A_{0b}P_x,&P_xA_{1b}&=0,&P_xP_{\circ}&=P_{\circ},\label{eq:P_x}\\
+ P_yA_{a0}&=A_{a0}P_y,&P_yA_{a1}&=0,&P_yP_{\circ}&=P_{\circ}.\label{eq:P_y}
+\end{align}
+Induction on word length identifies $U_x$ and $U_y$ as cyclic increments of $x$ and $y$ respectively, acting identically on $\KK$. The same induction makes $P_x,P_y$ the indicators of $x=0,y=0$. In particular $U_x,U_y$ commute, and
+\[
+ P_{x,\rm last}=U_x^*P_xU_x,\qquad P_{y,\rm last}=U_y^*P_yU_y
+\]
+mark the final column and row. These are conclusions on the full root multiplicity, not just selected vectors.
+
+\subsection{A finite deterministic tableau}
+Choose a deterministic radius-one cellular automaton on the half-line. Its finite alphabet $\Gamma$ includes start $s$, blank $b$ and halt $H$, and its update is $\Phi(\ell,c,r,\varepsilon)$ with left boundary symbol $\#$ and external pulse $\varepsilon\in\{0,1\}$. The initial row is $s,b,b,\ldots$. We use these conventions:
+\begin{itemize}
+\item $\Phi(b,b,b,\varepsilon)=b$ for both pulse values.
+\item The initial start state ignores the pulse at time zero. Later waiting-front states respond to positive-time pulses.
+\item Cells passed by the waiting front keep their unary marks. Frozen cells and all states of the later input-checking computation ignore subsequent pulses.
+\item A transition using the pulse at time $y$ produces row $y+1$. Thus the pulse at time $q$ records the front at coordinate $q$ in that next row.
+\end{itemize}
+Here $\Phi$ names the update function; $f$ in the following table is a front-state symbol. Here is an explicit front layer, with alphabet $\{s,b,f,z,H\}$.
+The right neighbour is unused in these six rules:
+\[
+\begin{array}{c|l}
+\text{condition}&\text{next centre}\\\hline
+c=s&b\\
+c=f&z\text{ if }\varepsilon=1,\ b\text{ if }\varepsilon=0\\
+c=b,\ \ell=s&f\\
+c=b,\ \ell=f&f\text{ if }\varepsilon=0,\ b\text{ if }\varepsilon=1\\
+c=z&z\\
+c=H&H
+\end{array}
+\]
+All remaining blank centres stay blank. At time $y\geq1$, until a return,
+the unique front is at $x=y$. The first positive pulse at $q$ writes $z$ at
+$(q,q+1)$ and suppresses the front's successor. The frozen mark's distance
+from the left boundary is the unary input $q$; blank cells between the
+boundary and the mark represent its unary positions. Pulse-dependence is
+confined to neighbourhoods containing the front. In particular a blank
+right of $f$ may read the pulse.
+
+Add a persistent unary bit $u\in\{0,1\}$, initially zero, with
+$u'=1$ when the old front centre is $s$ or $f$, and $u'=u$ otherwise.
+Thus passed cells retain their unary marks on a separate track, even
+though their front-layer component is blank. Take the product alphabet
+$\{s,b,f,z,H\}\times\{0,1\}\times\mathcal T$, with a finite TM alphabet
+$\mathcal T=\mathcal A\times(Q\cup\{\mathrm{no\ head}\})$ for the fixed
+one-tape half-line program in Section~\ref{sec:reduction}. All TM cells start
+blank without a head. The transition $f\to z$ initializes its head in the
+start state at that cell. Thereafter a centre carrying $(a,p)$ writes the
+symbol prescribed by $\delta(p,a,u)$ and retains a head only for a stationary
+move. A head moving right (left) is received by the right (left) neighbour,
+whose old tape symbol is retained. A centre receiving no head retains its
+symbol without a head. Invalid multiple incoming heads may be sent to a
+fixed error state; they never occur from this initialization. The left
+boundary $\#$ is read as a tape end marker and no transition moves left of
+it. The frozen front track is read-only input for this TM. A halting head
+writes a designated halt symbol $H$ in the combined alphabet and keeps it.
+These prescriptions give a finite radius-one lookup table effectively
+from the finite TM transition table; all subsequent TM transitions ignore
+the pulse. Denote this finite product alphabet, with the halt convention,
+by $\Gamma$. In the combined alphabet, $s$ and $b$ abbreviate the
+start and fully blank product states. Collapse any product state with a
+halting head to the single absorbing symbol $H$.
+
+Blank quiescence holds before a front or head arrives. The $s$ rule ignores
+the time-zero pulse and seeds $f$ at time one via its right neighbour.
+The mark is permanent and later pulses cannot restart a head. Finally,
+all disturbances start at the origin, or at the marked front within its
+radius-one cone, so no nonblank cell can occur at $x>y$. These checks give
+all four conventions and the blank right ghost used below.
+
+Let $(P_c)_{c\in\Gamma}$ be a centralizer PVM and $P_{\rm ret}$ a centralizer projection, with $P_{{\rm ret},0}=I-P_{\rm ret}$, $P_{{\rm ret},1}=P_{\rm ret}$. Require
+\begin{equation}\label{eq:initial}
+ P_sP_xP_y=P_xP_y,\qquad P_b(I-P_x)P_y=(I-P_x)P_y,\qquad P_H=0.
+\end{equation}
+Define centralizer polynomials
+\begin{align*}
+ L_\#&=P_x,& L_c&=U_xP_cU_x^*(I-P_x),\\
+ N_r&=U_x^*P_rU_x(I-P_{x,\rm last})+\mathbf1_{\{r=b\}}P_{x,\rm last}.
+\end{align*}
+For every $a\in\Gamma$ impose
+\begin{equation}\label{eq:update}
+ \left[U_y^*P_aU_y-\sum_{\Phi(\ell,c,r,\varepsilon)=a}
+ L_\ell P_cN_rP_{{\rm ret},\varepsilon}\right](I-P_{y,\rm last})=0.
+\end{equation}
+The factors have the displayed order. They need not commute globally. The factor $I-P_{y,\rm last}$ removes a spurious transition from the final row to row zero. The ghost to the right of the last column is blank.
+
+\begin{lemma}[Definite computation]\label{lem:tableau}
+Suppose a root vector $\xi$ belongs to a sector where the clock pulse on every coordinate has a specified scalar value. Then every $P_c$ acts on $A_w\xi$ as the indicator of the genuine classical computation at $(x(w),y(w))$.
+\end{lemma}
+\begin{proof}
+Work at a fixed depth $m$ and induct on time, for every spatial coordinate at once. Equation~\eqref{eq:initial} gives row zero. On an induction vector every factor $L_\ell,P_c,N_r,P_{{\rm ret},\varepsilon}$ acts by its classical zero or one. Their ordered product therefore selects exactly one update. Equation~\eqref{eq:update} gives $U_y^*P_aU_y$ with the correct scalar on that vector. Multiplying by $U_y$ gives the next-row assertion.
+
+The half-line and the square agree throughout this induction. At time $y$ no disturbance has travelled beyond coordinate $y$. In particular the ghost cell $2^m$ is blank for all times $y\leq2^m-1$, by radius one and quiescence under either pulse. The left ghost is always $\#$. This proves the genuine-prefix assertion. A halting event at finite coordinates and time occurs in every sufficiently large square and contradicts $P_H=0$.
+\end{proof}
+
+The tableaux at distinct depths need not intertwine with the creation operators. Determinism forces each of them to the same finite prefix; soundness needs only one sufficiently large square. Every depth has positive normal weight by \eqref{eq:fockdensity}.
+
+\subsection{A worked front and mask example}\label{sec:toy}
+Table~\ref{tab:toy} is rendered by \texttt{review/generate\_toy.py}
+from \texttt{tableau(3,3)[3]}.
+Its $d$ denotes a passed cell and $m$ a frozen mark. These persistent
+annotations differ from the minimal front layer above, whose passed cells
+are blank and whose mark is $z$; both put the mark at $(3,4)$.
+The pulse at time zero is ignored by $s$. The pulse at $y=3$ produces the
+mark in row 4, and the later pulse at $y=6$ has no effect.
+\input{sections/toy-table}

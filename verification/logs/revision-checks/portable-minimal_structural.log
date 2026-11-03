@@ -1,0 +1,22 @@
+{
+  "exact_old_FMS_forbidden_probabilities_zero": 2472,
+  "exact_FMS_PVMs_checked": 40,
+  "field": "Q(sqrt(2))",
+  "tree_independent": "all scaffold effects are tensor identity on the tree; normalized root trace is one",
+  "release_serialized_audit": {
+    "all_serialized_bindings_checked": 77750,
+    "all_column_graph_tests_checked": 11652,
+    "all_rational_row_expansions_checked": 748,
+    "scalar_pair_contexts_checked": 333,
+    "spectator_masks_checked": true,
+    "character_orthogonality_exact": true,
+    "old_forbidden_events_checked": 2472,
+    "questions": 27991,
+    "max_answers": 256
+  },
+  "check_edits": [
+    "remove hardcoded question count 169460",
+    "redirect source archive to minimal_input.zip"
+  ],
+  "peak_working_set_bytes": null
+}

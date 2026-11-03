@@ -1,0 +1,94 @@
+\section{The upper bound}\label{sec:upper}
+\subsection{Normalize one Schmidt coefficient}
+For a pure strategy write $\psi=\sum_i s_i|i,i\rangle$ with $s_1\geq s_2\geq\cdots$ and $\sum_i s_i^2=1$. Set $d_i=s_i/s_1$ and $D_{\rm Sch}=\operatorname{diag}(d_i)$. For some integer $\kappa$,
+\begin{equation}\label{eq:DK}
+ d_1=1,\qquad d_i\downarrow0,\qquad \Tr D_{\rm Sch}^2\leq \kappa.
+\end{equation}
+For positive effects $E,F$, vectorization gives
+\[
+ p(E,F)=\frac{\|\sqrt E\,D_{\rm Sch}\sqrt{F^{\mathsf T}}\|_{\rm HS}^2}{\Tr D_{\rm Sch}^2},
+ \qquad p(E,F)=0\ \Longleftrightarrow\ ED_{\rm Sch}F^{\mathsf T}=0.
+\]
+To prove the reverse implication, $ED_{\rm Sch}F^{\mathsf T}=0$ sends $D_{\rm Sch}\ran F^{\mathsf T}$ into $\ker E$. The closures of the ranges of $F^{\mathsf T}$ and $\sqrt{F^{\mathsf T}}$ agree, and $\ker E=\ker\sqrt E$. Continuity gives the square-root sandwich identity. The forward implication follows by multiplying the zero square-root sandwich by the square roots.
+
+Let $P_n$ be the first $n$ coordinate projection. Monotonicity in \eqref{eq:DK} gives
+\begin{equation}\label{eq:tail}
+ \|D_{\rm Sch}-P_nD_{\rm Sch}P_n\|=d_{n+1}\leq\sqrt{\kappa/(n+1)}.
+\end{equation}
+Consequently the family in \eqref{eq:DK} is compact in operator norm: take coordinatewise limits and use this common tail estimate; Fatou preserves the squared-sum bound. Finite families of POVMs on $\ell^2$ are compact in the weak operator topology. Positivity and the finite sum-to-identity relations survive these limits.
+
+\begin{lemma}[Compact sandwiches]\label{lem:sandwich}
+If $D_{{\rm Sch},j}\to D_{\rm Sch}$ in norm with compact $D_{\rm Sch}$, and uniformly bounded $E_j,F_j$ converge weakly to $E,F$, then $E_jD_{{\rm Sch},j}F_j$ converges weakly to $ED_{\rm Sch}F$.
+\end{lemma}
+\begin{proof}
+For fixed $v$, compactness makes $D_{\rm Sch}F_jv\to D_{\rm Sch}Fv$ in norm. Pair this with the weakly convergent vectors $E_j^*u$. The replacement of $D_{\rm Sch}$ by $D_{{\rm Sch},j}$ has norm error tending to zero.
+\end{proof}
+
+\subsection{An effective finite predicate}
+Let $\mathcal L_G$ be the losing tuples with $\pi(x,y)>0$. Define $R(G,\kappa,n)$ by the existence of $n$-dimensional POVMs and real numbers $1=d_1\geq\cdots\geq d_n\geq0$, $\sum_i d_i^2\leq \kappa$, such that
+\begin{equation}\label{eq:stage}
+ |(E_{a|x}D_{{\rm Sch},n}F_{b|y}^{\mathsf T})_{ij}|^2\leq \kappa/(n+1)
+ \quad((x,y,a,b)\in\mathcal L_G;\ i,j\leq n).
+\end{equation}
+This is semialgebraic over the rationals. Splitting complex entries into real and imaginary parts and using principal minors for positivity makes real quantifier elimination a decision procedure.
+
+A perfect strategy with $s_1^2\geq1/\kappa$ supplies all these witnesses. Compress its POVMs. Since $P_n$ commutes with $D_{\rm Sch}$ and $ED_{\rm Sch}F^{\mathsf T}=0$, the finite sandwich is $-P_nE(D_{\rm Sch}-D_{{\rm Sch},n})F^{\mathsf T}P_n$, with norm bounded by \eqref{eq:tail}.
+
+Conversely choose a witness for every $n$. Extend $D_{{\rm Sch},n}$ by zero and each POVM by a fixed deterministic POVM on the complement. Pass to a subsequence with $D_{{\rm Sch},n}\to D_{\rm Sch}$ in norm and all effects weakly convergent. For every fixed matrix entry, \eqref{eq:stage} and Lemma~\ref{lem:sandwich} give $ED_{\rm Sch}F^{\mathsf T}=0$. We retain
+\[
+ 1\leq\Tr D_{\rm Sch}^2\leq \kappa,\qquad d_1=1.
+\]
+The normalized vectorization of $D_{\rm Sch}$ is a perfect normal strategy with largest Schmidt probability $1/\Tr D_{\rm Sch}^2\geq1/\kappa$. Therefore
+\begin{equation}\label{eq:hierarchy}
+ G\in\perf_{\qs}(\kappa)\ \Longleftrightarrow\ \forall n\ R(G,\kappa,n),
+ \qquad \perf_{\qs}=\bigcup_{\kappa\geq1}\perf_{\qs}(\kappa).
+\end{equation}
+This proves the upper membership in Theorems~A and C.
+
+\subsection{No effective choice of stratum; vanishing largest weight}
+If a total computable $\kappa(G)$ were sufficient for every YES game, \eqref{eq:hierarchy} would put spatial perfection in $\Pi^0_1$. Perfect completeness of \cite[Theorem 12.6]{MIPRE} already makes it $\Sigma^0_1$-hard. NO instances of that map have spatial value at most $1/2$, because the finite-dimensional and spatial suprema agree. Thus the same map reduces the halting set to spatial perfection. The halting set cannot be $\Pi^0_1$, so such a function does not exist.
+
+Now suppose pure spatial strategies approach perfect play while $p_{\max}\geq1/\kappa$ on a subsequence. Normalize their largest Schmidt amplitudes. For a losing event,
+\[
+ \|ED_{\rm Sch}F^{\mathsf T}\|_{\rm HS}
+ \leq\|\sqrt E D_{\rm Sch}\sqrt{F^{\mathsf T}}\|_{\rm HS}
+ =\sqrt{\Tr D_{\rm Sch}^2\,p(E,F)}.
+\]
+Positive question weights force every such probability to zero. The same compact limit gives a perfect spatial strategy. Contraposition proves the final assertion of Theorem~C, including sequences of finite-dimensional pure strategies. Equivalently their Schmidt min-entropy tends to infinity.
+
+\subsection{Finite entropy and rational slack}
+For sorted Schmidt probabilities $p_i$, $p_i\leq1/i$. If $H(p)\leq B$, then
+\begin{equation}\label{eq:entropytail}
+ \delta_n=\sum_{i>n}p_i\leq B/\log_2(n+1).
+\end{equation}
+The normalized first-$n$ truncation majorizes $p$, so has entropy at most $B$. Its pure-state trace distance from the original state is $\sqrt{\delta_n}$. This bounds the change in any winning probability. Sorted distributions with entropy at most $B$ are compact in $\ell^1$: \eqref{eq:entropytail} gives tightness and entropy is lower semicontinuous. Their square roots are compact in $\ell^2$. Coupled with weak compactness of POVMs, this gives compactness of the resulting correlations.
+
+For effectivity use slack rather than treating entropy as a polynomial.
+Fix integers $B,n\geq1$. Choose computably a rational $\eta_{B,n}>0$
+converging to zero with
+$\eta_{B,n}>\sqrt{B/\log_2(n+1)}$.
+For every $k\geq1$ compute a rational polynomial $H_{n,k}$ such that
+\[
+ \sup_{p\in\Delta_n}|H_{n,k}(p)-H(p)|\leq1/k,
+ \qquad \Delta_n=\{p_i\geq0:\sum_i p_i=1\}.
+\]
+Such polynomials are effective, for example by Bernstein approximation with rationally rounded coefficients to
+the computable continuous function $-t\log_2t$ on $[0,1]$, with error
+$1/(nk)$ per summand. At precision $k$ require sorted $p\in\Delta_n$,
+real amplitudes $s_i\geq0$ with $s_i^2=p_i$, finite POVMs, and
+\[
+ \operatorname{loss}_G(s,E,F)\leq\eta_{B,n},\qquad
+ H_{n,k}(p)\leq B+1/n+1/k.
+\]
+The loss is a rational polynomial in the amplitudes and real and imaginary
+parts of the effects. Real quantifier elimination therefore decides this
+finite relaxation. Exact entropy feasibility implies every relaxation.
+Conversely, if every $k$-relaxation is feasible, compactness of this finite
+variable domain yields a subsequential limit; the uniform approximation
+error gives $H(p)\leq B+1/n$ and the closed loss constraint survives.
+Thus exact stage feasibility is equivalent to feasibility of all these
+rational relaxations, even though their sets need not be nested.
+Flattening $\forall n\,\forall k$ gives a uniform $\Pi^0_1$ predicate
+for the stratum $\perf_{\finS}(B)$ with supplied entropy budget $B$, defined by a perfect pure strategy with $H(p)\leq B$.
+
+A strategy of finite entropy satisfies the stages for an integer $B$ above its entropy. Conversely stage witnesses have a common entropy bound $B+1$, hence the tail compactness just proved. A limit is perfect and has entropy at most $B$. Thus $\perf_{\finS}\in\Sigma^0_2$. For mixed states, concavity of marginal entropy gives $\sum_j\lambda_j S((\psi_j)_A)\leq S(\rho_A)$. If the right side is finite, a positive-weight component has finite entropy and is perfect. This proves the claimed equivalence of the entropy conventions.

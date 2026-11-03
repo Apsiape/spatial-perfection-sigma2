@@ -1,0 +1,25 @@
+\section{Exact Bell attainment}\label{sec:bell}
+Let $L(p)=\sum_{xyab}c_{xyab}p(a,b\mid x,y)$ have rational coefficients and let $C_{\rm abs}=\sum|c_{xyab}|$. Its value on any strategy lies in $[-C_{\rm abs},C_{\rm abs}]$. Finite Schmidt truncation shows that its supremum over spatial strategies equals its supremum over finite-dimensional strategies.
+
+\subsection{A specified global bound}
+Assume first that $\beta\in\mathbb Q$ is a global upper bound. For fixed measurements the Bell operator
+\[
+ B(E,F)=\sum c_{xyab}E_{a|x}\otimes F_{b|y}
+\]
+satisfies $B\leq\beta I$. A normal state attains $\beta$ only if every positive-weight pure component does so. For a pure vector this is equivalent to $B\psi=\beta\psi$, because $\beta I-B$ is positive. Compress to its Schmidt supports and normalize the largest amplitude as before. Vectorization yields the homogeneous equation
+\begin{equation}\label{eq:bellequation}
+ \sum c_{xyab}E_{a|x}D_{\rm Sch}F_{b|y}^{\mathsf T}=\beta D_{\rm Sch}.
+\end{equation}
+At stage $n$ use the variables of \eqref{eq:stage} and require every squared entry of the residual in \eqref{eq:bellequation} to be at most $C_{\rm abs}^2\kappa/(n+1)$. Compression of a true witness satisfies this bound: only the compact tails of the sandwiched terms contribute, with coefficient sum $C_{\rm abs}$. Conversely the compact-sandwich lemma gives an exact nonzero limit solution. Its vectorization is an attaining strategy. Thus attainment is $\exists \kappa\,\forall n$ of a decidable predicate.
+
+If validity is not promised, impose also $\omega_q(L)\leq\beta$. This is $\Pi^0_1$: for each finite dimension, the universal assertion that all states and POVMs give value at most $\beta$ is decidable by real quantifier elimination. Finite-dimensional density states suffice for this validity test. The conjunction remains $\Sigma^0_2$.
+
+\subsection{No bound supplied}
+The quantifier pattern is explicitly $\exists \kappa\geq1\,\forall n\geq1\ \mathcal R_{\rm Bell}(L,\kappa,n)$, with $\mathcal R_{\rm Bell}$ decidable as follows. At stage $n$ introduce also a real variable $\beta\in[-C_{\rm abs},C_{\rm abs}]$, use the same residual bound, and require $\beta\geq\omega_n(L)$, where $\omega_n$ is the maximum in local dimension $n$. This latter requirement is a universal semialgebraic formula in $\beta$, not a numerical oracle. Full real quantifier elimination decides the stage formula with its existential and universal real variables.
+
+An attaining strategy supplies all stages. Conversely pass to a subsequence with $\beta_n\to\beta_*$, $D_{{\rm Sch},n}\to D_{\rm Sch}$ in norm and effects weakly convergent. For every fixed dimension $d$, all sufficiently late stages have $\beta_n\geq\omega_d(L)$. Hence $\beta_*\geq\sup_d\omega_d(L)$. The limit equation \eqref{eq:bellequation} gives a unit vector attaining $\beta_*$. Its expectation cannot exceed that supremum, so equality holds. This proves $\Sigma^0_2$ membership for attainment of the unspecified supremum.
+
+\subsection{A specified scalar value}
+Let $t\in\mathbb Q$ be supplied without a bound promise. A value strictly between the infimum and supremum has finite-dimensional values on either side, by equality of the finite and spatial extrema. A finite direct-sum mixture then attains $t$. Existence of a finite-dimensional strategy with value exactly $t$ is $\Sigma^0_1$, by dimension search and quantifier elimination. Every remaining attainable value is an endpoint. Upper endpoints are handled above; lower endpoints are upper endpoints for $-L$. This finite union is $\Sigma^0_2$.
+
+For hardness in all three cases use the winning-probability functional of $G_e$. Its coefficients are rational, its global bound and finite-dimensional supremum are both one, and attaining the specified value one is precisely perfect spatial play. Theorem~\ref{thm:reduction} and Section~\ref{sec:value} therefore prove Theorem~B. In its promised-bound version every reduction output has valid bound $1$, and the upper predicate restricts to the valid-bound domain, so the same map establishes promise-problem completeness.

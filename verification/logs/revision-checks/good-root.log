@@ -1,0 +1,3 @@
+all primes < 4000 have a good primitive root; min fraction good = 0.8738
+bound check q/4 < q-1 for q>=2: True
+chord >= 4 min(r,q-r)/q : True

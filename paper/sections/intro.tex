@@ -1,0 +1,68 @@
+\section{Introduction}\label{sec:intro}
+When does a finite game admit a strategy that wins every round? Approaching certainty and attaining certainty are different questions. They also depend on the model of quantum strategy. Table~\ref{tab:landscape} puts the distinction first. The spatial entry is the result of this paper.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}p{.53\linewidth}ll@{}}
+\toprule
+Decision problem & Complete class & Source\\
+\midrule
+Perfect finite-dimensional strategy & $\Sigma^0_1$ & \cite{MIPRE}\\
+Perfect commuting strategy & $\Pi^0_1$ & \cite{Slofstra,MNY}\\
+Finite-dimensional value equals one & $\Pi^0_2$ & \cite{MNY}\\
+Perfect spatial strategy & $\Sigma^0_2$ & This paper\\
+\bottomrule
+\end{tabular}
+\caption{Finite rational Boolean games; computable many-one reductions. A value is a supremum. A perfect strategy attains one.}\label{tab:landscape}
+\end{table}
+
+The finite-dimensional and spatial models use tensor products. The latter allows an arbitrary normal state on infinite-dimensional local Hilbert spaces. The commuting model instead allows the two measurement algebras to act on one Hilbert space and commute. Its compact state-space description makes perfect commuting play equivalent to commuting value one. Spatial play has no such compactness in normalized states.
+
+Our upper bound keeps one Schmidt coefficient from disappearing. After that coefficient is scaled to one, the amplitude operator belongs to a norm-compact family of compact operators. Losing probabilities become homogeneous zero equations. These survive a limit even when some squared Schmidt mass escapes. The surviving state can be normalized again.
+
+The hardness mechanism goes in the other direction. A finite Weyl clock commutes with a trace-class density. Each positive density eigenspace is finite-dimensional, so a determinant forces the clock phase to have finite order. The strategy chooses that order. A deterministic computation reads it and checks an infinite sequence of decidable conditions. This is the existential quantifier, and no computable bound on the game can capture its size. The modular-shift toolkit comes from our earlier paper \cite{Entropy}; here four calibrated bridges connect it to the computation.
+
+\Needspace{13\baselineskip}
+\begin{theoremA}\label{thm:A}
+Deciding whether a finite rational $0/1$ game has a perfect normal spatial strategy is $\Sigma^0_2$-complete. The same holds when a perfect strategy with finite marginal entropy is required. Hardness holds under the promise $\omega_q(G)=1$, for a family in which no instance has a perfect finite-dimensional strategy.
+\end{theoremA}
+
+Finite marginal entropy can be required on both sides. For pure strategies the two marginal entropies agree. For a perfect mixed strategy with one finite marginal entropy, a pure component has finite entropy and is still perfect; see Section~\ref{sec:upper}.
+
+\Needspace{10\baselineskip}
+\begin{theoremB}\label{thm:B}
+For rational Bell functionals, each of the following is $\Sigma^0_2$-complete in the normal spatial model: attainment of a supplied rational global upper bound; attainment of the supremum, with no bound supplied; and attainment of a supplied rational scalar value. In the first problem, validity of the supplied bound can either be promised or required as part of the decision problem.
+\end{theoremB}
+
+\Needspace{12\baselineskip}
+\begin{theoremC}\label{thm:C}
+Uniformly for integers $\kappa\geq1$, the existence of a perfect pure spatial strategy with largest Schmidt probability at least $1/\kappa$ is a $\Pi^0_1$ property. Their union is $\perf_{\qs}\in\Sigma^0_2$. No total computable function $\kappa(G)$ bounds a sufficient stratum for every spatially perfect game. If $\omega_q(G)=1$ and no perfect spatial strategy exists, the largest Schmidt probability tends to zero along every sequence of pure spatial strategies whose winning probabilities tend to one.
+\end{theoremC}
+
+\subsection{Prior work and contribution}
+The finite-dimensional entry in Table~\ref{tab:landscape} uses perfect completeness in Theorem~12.6 of Ji, Natarajan, Vidick, Wright and Yuen \cite{MIPRE}, not just a gap statement about a supremum. Upper membership follows by a dimension search and real quantifier elimination. Slofstra's embedding theorem \cite{Slofstra} and the account of Mousavi, Nezhadi and Yuen \cite{MNY} give the commuting entry. Their value-one theorem gives the third entry. The commuting upper bound uses the convergent moment hierarchy of Navascu\'es, Pironio and Ac\'in \cite{NPA}. The operator-solution framework for binary constraint system games originates with Cleve and Mittal \cite{CM}; Cleve, Liu and Slofstra gave the commuting-operator extension \cite{CLS}. Slofstra also established nonclosure of finite-dimensional quantum correlations \cite{SlofstraNonclosed}. These are distinct earlier results. Lin's $\mathsf{MIP}^{co}=\mathsf{coRE}$ theorem concerns gap approximation in the commuting model \cite{Lin}; it does not classify spatial attainment.
+
+Infinite-dimensional spatial correlations were constructed by Coladangelo and Stark \cite{CS}. Kim, Paulsen and Schafhauser prove that perfect spatial play collapses to perfect finite-dimensional play for synchronous games \cite[Corollary 3.11]{KPS}. Lupini and coauthors establish the corresponding equivalence for imitation games \cite[Corollary~5.4]{Imitation}. Our games retain nonsynchronous bridge questions. No YES instance is synchronous or an imitation game, since either condition would imply finite-dimensional perfect play.
+
+Man\v{c}inska's flagged magic-square construction supplies the bridge geometry \cite{Mancinska}. The normal bridge, shared-label refinement, graph products and Boolean rational-row tests were developed in \cite[Lemmas~4.1 and 4.2, Theorem~B, Eq.~(32)]{Entropy}. The versions needed here are restated and proved in Section~\ref{sec:compiler}. That section extends the assembly from a particular presentation to four bridges and arbitrary finite lists of endpoint labels. The rooted four-ary computation and the finite-period reader then give the hardness reduction. The compact-sandwich upper bound does not use this compiler.
+
+Fu, Miller and Slofstra study fixed-scenario correlation membership \cite{FMS}. A remark there asserts, without proof, that fixed-scenario membership in $C_q$ and $C_{qs}$ is in RE; Section~\ref{sec:discussion} records a conditional tension with Theorem~A. We do not identify prescribed-table membership with game perfection.
+
+To our knowledge, Theorems~A and B give the first $\Sigma^0_2$-completeness classifications of these spatial attainment problems. This priority statement is provisional. It rests on the cited hierarchy and correlation papers, their nearby results, and a targeted literature search. It is not an exhaustive bibliographic certificate.
+
+\begin{figure}[ht]
+\centering\small
+\begin{tabular}{@{}c@{}}
+Presentation $\xrightarrow{\text{Lemma~\ref{lem:four}}}$ finite game $G_e$\\[4pt]
+Perfect normal strategy $\longrightarrow$ normal realization\\[2pt]
+$\longrightarrow$ Fock tree $\longrightarrow$ finite clock sector\\[2pt]
+$\longrightarrow$ deterministic tableau $\longrightarrow\forall t\ R(e,n,t)$\\[4pt]
+Witness $n$ $\longrightarrow$ Fock/Weyl model\\[2pt]
+$\longrightarrow$ scaffold, frame, row ancilla $\longrightarrow$ perfect strategy
+\end{tabular}
+\caption{Dependencies of the hardness proof. Compactness and Bell
+attainment have separate upper-bound arguments.}\label{fig:dependencies}
+\end{figure}
+
+\subsection{Proof route}
+Figure~\ref{fig:dependencies} summarizes the hardness proof. Section~\ref{sec:upper} proves Theorem~C and the finite-entropy upper bound. Section~\ref{sec:compiler} gives the finite game compiler. Sections~\ref{sec:tree}--\ref{sec:reduction} encode a chosen finite witness and all its checks. Section~\ref{sec:value} proves the value-one promise with four explicit boundary defects. Section~\ref{sec:bell} proves Theorem~B. The verification appendix records what the finite programs check.

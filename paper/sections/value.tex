@@ -1,0 +1,31 @@
+\section[Value one for every constructed game]{Every constructed game has value one}\label{sec:value}
+The finite-dimensional approximations do not need a witness for $e$. Truncate the Fock tree to depths $0,\ldots,m$ and choose a prime $q>2^m$ with a good phase (Lemma~\ref{lem:goodphase}). Use the normalized density
+\[
+ h^{[m]}=\frac{\sum_{|w|\leq m}16^{-|w|}|w\rangle\langle w|}
+ {\sum_{j=0}^m4^{-j}}\otimes\frac{I_q}{q}.
+\]
+Every represented time is less than $q$. The decoder therefore remains in the waiting stage in every square and never halts. Let $P_m$ denote the top-depth projection. Its mass is
+\begin{equation}\label{eq:topmass}
+ t_m=\Tr(h^{[m]}P_m)=\frac{3}{4^{m+1}-1}.
+\end{equation}
+
+Every endpoint identity $LA_\alpha=A_\beta B$ remains exact. Below top depth it is the canonical identity; on top depth both sides vanish because the endpoint expression $B$ preserves depth. The modular equations, the range-sum identity and all off-diagonal $A_\alpha^*A_\beta=0$ also remain exact. The only failed original relations are the four diagonal isometry equations:
+\begin{equation}\label{eq:fourdefects}
+ A_\alpha^*A_\alpha-I=-P_m\quad(\alpha=00,01,10,11).
+\end{equation}
+All graph and triangle projections are defined from the actual products. Every structural graph, synchrony, binding, FMS, refinement and column test stays exact.
+
+Here is the full row accounting. For each $\alpha$ let $L_\alpha$ be the denominator-clearing integer and $d_\alpha$ the column dimension of the row obtained by translating $a_\alpha^*a_\alpha-e_0=0$ into graph projections. These depend on the finite input presentation, not on $m$ or $q$. In the scalar qutrit frame its defect $S_\alpha$ has off-diagonal blocks $-(P_m)_0$ and adjoint and zero diagonal blocks. The frame density is $I_3/3$ and the source scaffold mass is $1/121$, so
+\begin{equation}\label{eq:defectweight}
+ \Tr(h_{\rm old}S_\alpha^2)=\frac23\frac1{121}t_m.
+\end{equation}
+The same calculation applies separately to each of the four rows. Their row-zero events have distinct column questions and occur in no other failed rule. If the game has $Q_e$ equally padded questions per party, \eqref{eq:rowloss} gives
+\begin{align}
+ 1-\omega(G_e,\mathcal S_m)
+ &\leq C_e\frac{3}{4^{m+1}-1},\label{eq:valueloss}\\
+ C_e&=\frac{1}{Q_e^2}\frac{2}{363}
+ \sum_{\alpha\in\{00,01,10,11\}}\frac{4L_\alpha^2}{d_\alpha^3}.\label{eq:valueconstant}
+\end{align}
+If the four row constructions have common $L,d$, this is $C_e=32L^2/(363Q_e^2d^3)$. We include one oriented row-zero event per row. The opposite column questions are retained for identification without a second row-zero test. This fixes the convention in the constant. Duplicating the four row-zero tests in the opposite orientation would multiply the constant by two.
+
+Since the density factor $I_q/q$ has trace one, no factor of $q$ enters the loss. Thus $\omega_q(G_e)=1$ for every $e$, proving the promise in Theorem~A. This calculation uses four rows, rather than suppressing them inside an unspecified continuity estimate.

@@ -1,0 +1,178 @@
+{
+  "arithmetic": "exact Fraction pairs in Q(zeta_3), with zeta_2=-1",
+  "results": [
+    {
+      "m": 0,
+      "q": 2,
+      "root_dimension": 2,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1",
+      "sum_four_squared_source_defects": "4",
+      "D_norm_squared": "0",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": true
+    },
+    {
+      "m": 0,
+      "q": 3,
+      "root_dimension": 3,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1",
+      "sum_four_squared_source_defects": "4",
+      "D_norm_squared": "0",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": true
+    },
+    {
+      "m": 1,
+      "q": 2,
+      "root_dimension": 10,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/5",
+      "sum_four_squared_source_defects": "4/5",
+      "D_norm_squared": "1/64",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": true
+    },
+    {
+      "m": 1,
+      "q": 3,
+      "root_dimension": 15,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/5",
+      "sum_four_squared_source_defects": "4/5",
+      "D_norm_squared": "1/48",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": true
+    },
+    {
+      "m": 2,
+      "q": 2,
+      "root_dimension": 42,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/21",
+      "sum_four_squared_source_defects": "4/21",
+      "D_norm_squared": "1/64",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": false
+    },
+    {
+      "m": 2,
+      "q": 3,
+      "root_dimension": 63,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/21",
+      "sum_four_squared_source_defects": "4/21",
+      "D_norm_squared": "1/48",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": false
+    },
+    {
+      "m": 3,
+      "q": 2,
+      "root_dimension": 170,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/85",
+      "sum_four_squared_source_defects": "4/85",
+      "D_norm_squared": "1/64",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": false
+    },
+    {
+      "m": 3,
+      "q": 3,
+      "root_dimension": 255,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/85",
+      "sum_four_squared_source_defects": "4/85",
+      "D_norm_squared": "1/48",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": false
+    },
+    {
+      "m": 4,
+      "q": 2,
+      "root_dimension": 682,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/341",
+      "sum_four_squared_source_defects": "4/341",
+      "D_norm_squared": "1/64",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": false
+    },
+    {
+      "m": 4,
+      "q": 3,
+      "root_dimension": 1023,
+      "checks": 200,
+      "failed_original_rows": [
+        "A_00* A_00 = I",
+        "A_01* A_01 = I",
+        "A_10* A_10 = I",
+        "A_11* A_11 = I"
+      ],
+      "top_mass_per_row": "1/341",
+      "sum_four_squared_source_defects": "4/341",
+      "D_norm_squared": "1/48",
+      "CA": "explicit nonhalting pulse-sensitive front, not the unspecified universal CA",
+      "q_exceeds_all_times": false
+    }
+  ],
+  "bad_roots_at_q_2_or_3": [],
+  "elapsed_seconds": 8.719134999904782,
+  "peak_working_set_bytes": 32649216
+}

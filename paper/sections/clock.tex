@@ -1,0 +1,64 @@
+\section{A finite-order clock and its period reader}\label{sec:clock}
+\subsection{A determinant supplies a finite witness}
+Add centralizer unitaries $J_{\rm W},K_{\rm W},Z_{\rm clk}$ with
+\begin{equation}\label{eq:weyl}
+\begin{gathered}
+ J_{\rm W}K_{\rm W}=Z_{\rm clk}K_{\rm W}J_{\rm W},\qquad
+ [Z_{\rm clk},J_{\rm W}]=[Z_{\rm clk},K_{\rm W}]=0,\\
+ [J_{\rm W},A_{ab}]=[K_{\rm W},A_{ab}]=[Z_{\rm clk},A_{ab}]=0.
+\end{gathered}
+\end{equation}
+A unitary commuting with an isometry also commutes with its adjoint: its inverse commutes with the isometry, and taking adjoints gives the assertion. Thus these labels reduce $\KK=P_{\circ}\HH$ and commute with $\sigma$. Their action on every word sector is their root action.
+
+Every positive eigenspace of $\sigma$ is finite-dimensional. It reduces $J_{\rm W},K_{\rm W},Z_{\rm clk}$ and decomposes into $Z_{\rm clk}$ eigenspaces. On a nonzero such eigenspace of dimension $d$, with phase $\zeta$, the Weyl relation gives
+\begin{equation}\label{eq:det}
+ \det(J_{\rm W}K_{\rm W})=\zeta^d\det(K_{\rm W}J_{\rm W}),\qquad \zeta^d=1.
+\end{equation}
+Since the positive eigenspaces exhaust $\KK$, $Z_{\rm clk}$ has pure point spectrum there and every phase is a root of unity. At least one sector is nonzero. Conversely a $q$-dimensional Weyl pair realizes every primitive $q$th root, with density $I_q/q$.
+
+\subsection{The clock and a counter without a positive lower bound}
+Take a centralizer unitary $W$ and a positive centralizer contraction $C_{\rm ctr}$ with
+\begin{align}
+ WP_{\circ}&=P_{\circ},&WA_{ab}&=A_{ab}Z_{\rm clk}^bW^2,\label{eq:W}\\
+ C_{\rm ctr}P_{\circ}&=P_{\circ},&C_{\rm ctr}A_{ab}&=2^{-b}A_{ab}C_{\rm ctr}^2.\label{eq:C}
+\end{align}
+Also require $Z_{\rm clk}$ to commute with $U_x,U_y,P_x,P_y,W,C_{\rm ctr},P_{\rm ret},T_{\rm inv}$ and all $P_c$. Induction on word length, using the coordinate recurrence, gives
+\begin{equation}\label{eq:coordinateclock}
+ W|_{(x,y)}=Z_{\rm clk}^y,\qquad C_{\rm ctr}|_{(x,y)}=2^{-y}I.
+\end{equation}
+In particular $C_{\rm ctr}$ is injective even though its spectrum accumulates at zero.
+
+For a centralizer projection $P_{\rm ret}$ and contraction $T_{\rm inv}$, impose
+\begin{equation}\label{eq:reader}
+ (W-I)P_{\rm ret}=0,\qquad T_{\rm inv}(W-I)=\tfrac12 C_{\rm ctr}(I-P_{\rm ret}).
+\end{equation}
+The first equation puts $\ran P_{\rm ret}$ in $\ker(W-I)$. For $\xi$ in that kernel the second gives $C_{\rm ctr}(I-P_{\rm ret})\xi=0$. Injectivity of $C_{\rm ctr}$ gives $P_{\rm ret}\xi=\xi$. Thus
+\begin{equation}\label{eq:return}
+ P_{\rm ret}=\operatorname{proj}\ker(W-I).
+\end{equation}
+On a root phase sector of order $q$, the pulse is exactly $\mathbf1_{\{q\mid y\}}$ at every spatial coordinate. It cannot vanish spuriously or postpone the first return.
+
+\subsection{A bounded inverse on every prime clock}
+\begin{lemma}[A good primitive phase]\label{lem:goodphase}
+For every prime $q$ there is a primitive $q$th root $\zeta$ such that
+\[
+ |\zeta^t-1|\geq2^{-t-1}\quad(t\geq1,\ q\nmid t).
+\]
+\end{lemma}
+\begin{proof}
+For $1\leq r<q$,
+\[
+ |e^{2\pi ir/q}-1|\geq4\min(r,q-r)/q.
+\]
+Fix $1\leq t<q$. Multiplication by $t$ permutes nonzero residues. A phase $e^{2\pi ik/q}$ violating the required inequality must satisfy $\min(tk\bmod q,q-(tk\bmod q))<q2^{-t-3}$. There are at most $q2^{-t-2}$ such residues. Summing over $t$ excludes fewer than $q/4$ choices, while $q/4<q-1$. One of the $q-1$ nontrivial phases works. For $t\geq q$ reduce to a nonzero residue $r<q$; its lower bound $2^{-r-1}$ is at least $2^{-t-1}$.
+\end{proof}
+
+For this phase set
+\begin{equation}\label{eq:D}
+ T_{\rm inv}|_{(x,y)}=
+ \begin{cases}
+ 2^{-y-1}(\zeta^y-1)^{-1}I,&q\nmid y,\\
+ 0,&q\mid y.
+ \end{cases}
+\end{equation}
+Lemma~\ref{lem:goodphase} gives $\|T_{\rm inv}\|\leq1$. Equations~\eqref{eq:coordinateclock} and \eqref{eq:return} then verify \eqref{eq:reader}. The game coefficients remain rational: the phase belongs to the strategy, not the predicate.

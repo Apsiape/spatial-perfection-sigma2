@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: Please cite the paper; this distribution supplies its source and finite checks.
+type: software
+title: "Perfect play with spatial quantum strategies is Σ⁰₂-complete"
+version: 1.0.0
+date-released: '2026-11-03'
+license:
+- CC-BY-4.0
+- MIT
+- Apache-2.0
+authors:
+- family-names: Douglas
+  given-names: Seth
+  orcid: https://orcid.org/0009-0007-4708-3252
+- family-names: Mghirbi
+  given-names: Nidhal
+  orcid: https://orcid.org/0009-0005-6534-1118
+keywords:
+- nonlocal games
+- spatial quantum strategies
+- arithmetical hierarchy
+- Sigma-2 completeness
+- infinite-dimensional quantum strategies
+- Bell attainment
+- finite entropy
+abstract: "When does a finite nonlocal game admit perfect spatial quantum play? We prove that this decision problem is complete for the second existential level of the arithmetical hierarchy. The same classification holds when a perfect strategy must have finite marginal entropy. Hardness persists among games whose finite-dimensional value is one and which have no finite-dimensional perfect strategy. A finite clock-phase order supplies the existential witness: normality forces a finite order on a nonzero sector, while the strategy chooses the order.\n\nFor the upper bound, we normalize the largest Schmidt coefficient and use compact operator sandwiches. Fixing a lower bound on the largest Schmidt probability gives a co-recursively enumerable stratum. No computable bound selects a sufficient stratum for every game. Exact attainment of a rational Bell bound, of an unspecified supremum, and of a specified scalar value is also Sigma^0_2-complete. The hardness proof extends the modular-shift and rational-row toolkit of our earlier entropy-game paper to four calibrated bridges and a deterministic computation on rooted finite squares."
+preferred-citation:
+  type: generic
+  title: "Perfect play with spatial quantum strategies is Σ⁰₂-complete"
+  authors:
+  - family-names: Douglas
+    given-names: Seth
+    orcid: https://orcid.org/0009-0007-4708-3252
+  - family-names: Mghirbi
+    given-names: Nidhal
+    orcid: https://orcid.org/0009-0005-6534-1118
+  year: 2026
+  version: 1.0.0
+  notes: 'Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md.'
+references:
+- type: generic
+  title: 'Perfect play in a finite nonlocal game requires infinite entanglement entropy'
+  doi: '10.5281/zenodo.23902656'
+- type: generic
+  title: 'Finite games that read the type of a von Neumann algebra'
+  doi: '10.5281/zenodo.23787124'

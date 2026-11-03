@@ -1,0 +1,91 @@
+{
+  "presentation": "four calibrated bridges; one supported modular isometry; no extra transported labels",
+  "input_polynomials": 7,
+  "words": 34,
+  "projection_variables": 887,
+  "projection_rows": 748,
+  "questions_per_party": 27991,
+  "old_questions": 908,
+  "max_answers": 256,
+  "scalar_dimension": 256,
+  "row_dimensions": {
+    "16": 743,
+    "256": 1,
+    "64": 4
+  },
+  "old_forbidden": 2472,
+  "bindings": 77750,
+  "source_sha256": "4b857b07ffe8a9c3af5aee73b7d5615ac94a30646b69c9c6dc39d9845702adb4",
+  "producer_edits": [
+    "remove hardcoded maxd==256",
+    "remove hardcoded question count==169460"
+  ],
+  "results": [
+    {
+      "m": 0,
+      "tree_dimension": 1,
+      "base_dimension": 17,
+      "old_dimension": 51,
+      "compiled_dimension": 13056,
+      "failed_rows": [
+        "P_source"
+      ],
+      "source_L": 2,
+      "source_d": 16,
+      "top_mass": "1",
+      "sum_rowzero_loss": "1/46464",
+      "uniform_game_loss": "1/36404361907584",
+      "other_tests": "structural identities proved in report; old FMS event probabilities checked separately"
+    },
+    {
+      "m": 1,
+      "tree_dimension": 5,
+      "base_dimension": 85,
+      "old_dimension": 255,
+      "compiled_dimension": 65280,
+      "failed_rows": [
+        "P_source"
+      ],
+      "source_L": 2,
+      "source_d": 16,
+      "top_mass": "1/5",
+      "sum_rowzero_loss": "1/232320",
+      "uniform_game_loss": "1/182021809537920",
+      "other_tests": "structural identities proved in report; old FMS event probabilities checked separately"
+    },
+    {
+      "m": 2,
+      "tree_dimension": 21,
+      "base_dimension": 357,
+      "old_dimension": 1071,
+      "compiled_dimension": 274176,
+      "failed_rows": [
+        "P_source"
+      ],
+      "source_L": 2,
+      "source_d": 16,
+      "top_mass": "1/21",
+      "sum_rowzero_loss": "1/975744",
+      "uniform_game_loss": "1/764491600059264",
+      "other_tests": "structural identities proved in report; old FMS event probabilities checked separately"
+    },
+    {
+      "m": 3,
+      "tree_dimension": 85,
+      "base_dimension": 1445,
+      "old_dimension": 4335,
+      "compiled_dimension": 1109760,
+      "failed_rows": [
+        "P_source"
+      ],
+      "source_L": 2,
+      "source_d": 16,
+      "top_mass": "1/85",
+      "sum_rowzero_loss": "1/3949440",
+      "uniform_game_loss": "1/3094370762144640",
+      "other_tests": "structural identities proved in report; old FMS event probabilities checked separately"
+    }
+  ],
+  "elapsed_seconds": 3.529435500036925,
+  "peak_working_set_bytes": 157073408
+}

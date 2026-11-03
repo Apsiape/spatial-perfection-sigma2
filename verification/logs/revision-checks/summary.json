@@ -1,0 +1,48 @@
+{
+  "runs": [
+    {
+      "name": "good-root",
+      "exit_code": 0,
+      "seconds": 7.914
+    },
+    {
+      "name": "tree-clock",
+      "exit_code": 0,
+      "seconds": 68.754
+    },
+    {
+      "name": "exact",
+      "exit_code": 0,
+      "seconds": 9.097
+    },
+    {
+      "name": "minimal-compile",
+      "exit_code": 0,
+      "seconds": 4.352
+    },
+    {
+      "name": "minimal-structural",
+      "exit_code": 0,
+      "seconds": 1.269
+    },
+    {
+      "name": "portable-exact_audit",
+      "exit_code": 0,
+      "seconds": 8.207
+    },
+    {
+      "name": "portable-minimal_compile",
+      "exit_code": 0,
+      "seconds": 3.986
+    },
+    {
+      "name": "portable-minimal_structural",
+      "exit_code": 0,
+      "seconds": 1.318
+    }
+  ],
+  "portable_test": "simulated sys.platform=linux, WinDLL forbidden; not a native Linux/macOS execution",
+  "bundled_artifacts_unchanged": 5,
+  "mathematical_json_equal_to_shipped": true,
+  "output_dir_rejections": 3
+}

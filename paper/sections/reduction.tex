@@ -1,0 +1,89 @@
+\section{The reduction}\label{sec:reduction}
+Fix any decidable predicate $R(e,n,t)$ and the set $S=\{e:\exists n\,\forall t\ R(e,n,t)\}$. We effectively choose the cellular automaton in Section~\ref{sec:tree} to run the following program, with $e$ hardwired.
+
+\paragraph{Read a positive-time return.}
+At time $y$ a waiting front is at position $y$. Ignore the time-zero pulse. At the first positive-time pulse, freeze the front and retain its coordinate as unary input $q$. With the transition convention above the mark is written into row $q+1$ at position $q$. Test $q$. If $q=1$ or $q$ is composite, halt. Otherwise compute the unique $n\geq0$ with $q=p_{n+1}$, the $(n+1)$st prime. Then evaluate $R(e,n,0),R(e,n,1),\ldots$ and halt at the first false answer. All later computation states ignore the external pulse.
+
+For a $\Sigma^0_2$-complete choice of $S$, there is no computable bound on a sufficient clock order as a function
+of the input game: such a bound would leave only finitely many possible
+$n$ in this reduction, making $\exists n\,\forall t\ R(e,n,t)$ a
+$\Pi^0_1$ predicate. Indeed one tests, for every finite time cutoff, whether
+some one of those finitely many candidates survives all checks so far;
+if none survives forever, all have failed by a common finite cutoff.
+This contradicts $\Sigma^0_2$-hardness.
+
+This finite program has an effective finite radius-one simulation. The initial-front rule, frozen unary track and ordinary tape/head tracks give the stated boundary conventions. We do not require a bound on its running time. Each completed false check causes the halt symbol after finitely many updates.
+
+Include the Fock, coordinate, clock, reader and tableau equations above, all typing relations, and the stated $Z_{\rm clk}$ commutators. They form an admissible finite presentation. For example their transported polynomials include
+\[
+ W_4a_{ab}=a_{ab}Z_{{\rm clk},0}^bW_0^2,\qquad
+ C_{{\rm ctr},4}a_{ab}=2^{-b}a_{ab}C_{{\rm ctr},0}^2,\qquad
+ J_{{\rm W},4}a_{ab}=a_{ab}J_{{\rm W},0}.
+\]
+The source-only return equations and tableau equations are centralizer polynomials. Lemma~\ref{lem:four} therefore computes a finite rational Boolean game $G_e$.
+
+\begin{theorem}\label{thm:reduction}
+The map $e\mapsto G_e$ satisfies
+\[
+ G_e\in\perf_{\qs}\ \Longleftrightarrow\
+ G_e\in\perf_{\finS}\ \Longleftrightarrow\
+ \exists n\,\forall t\ R(e,n,t).
+\]
+No $G_e$ has a perfect finite-dimensional strategy.
+\end{theorem}
+\begin{proof}
+A perfect normal strategy extracts a nonzero faithful root realization. The determinant argument supplies a nonzero root phase sector of finite order $q$. By \eqref{eq:weyl} its word descendants persist at all depths. Equations~\eqref{eq:W}--\eqref{eq:return} force the exact return sequence, with its first positive return at $q$. Lemma~\ref{lem:tableau} needs only that the initial root vector lie in this $Z_{\rm clk}$-eigenspace: the clock pulse is then scalar on all its word descendants. The imposed $[Z_{\rm clk},P_c]=0$ relations are redundant for this induction. An invalid $q$ halts. For valid $q=p_{n+1}$ any false $R(e,n,t)$ also halts. A sufficiently large square would contain that halt, contrary to $P_H=0$. Hence the extracted $n$ witnesses membership in $S$.
+
+Conversely take a witness $n$ and set $q=p_{n+1}$. Use \eqref{eq:fockdensity} with $\sigma=I_q/q$, a good primitive phase and its Weyl pair, the canonical coordinate permutations, \eqref{eq:coordinateclock}, \eqref{eq:return}, \eqref{eq:D}, and the classical nonhalting tableau. Every required operator is bounded and commutes with the density when so specified. This is a simultaneous realization. On $\mathbb C^q$ one may take $J_{\rm W}|j\rangle=\zeta^j|j\rangle$, $K_{\rm W}|j\rangle=|j+1\bmod q\rangle$, and $Z_{\rm clk}=\zeta I$. Its root entropy and largest Schmidt probability are
+\begin{equation}\label{eq:witnessentropy}
+ S(h)=\log_2q+\log_2(4/3)+4/3,\qquad p_{\max}=3/(4q).
+\end{equation}
+The compiler adds finite factors, giving a perfect finite-entropy strategy.
+
+The tensor-product witness can be written without an implicit extension.
+Let $\mathcal H_F=\ell^2(\mathcal W)$ and let $\mathcal H_{\rm sc}=\mathbb C^{17}$
+index the scaffold corners. Take
+\[
+ \mathcal H_A=\mathcal H_B=
+ \mathcal H_{\rm sc}\otimes\mathcal H_F\otimes\mathbb C^q
+ \otimes\mathbb C^3\otimes\mathbb C^{d_{\max}}.
+\]
+If $\mu=(1,2,2,2,2,4,4,4,4,8,8,8,8,16,16,16,16)/121$,
+use the pure vector
+\[
+ |\psi\rangle=|\sqrt\mu\rangle\!\rangle\otimes
+ |\sqrt{h_F}\rangle\!\rangle\otimes|\Phi_q\rangle
+ \otimes|\Phi_3\rangle\otimes|\Phi_{d_{\max}}\rangle,
+ \quad |\sqrt\mu\rangle\!\rangle=\sum_i\sqrt{\mu_i}|i,i\rangle.
+\]
+The Fock factor is $\sum_w\sqrt{(3/4)16^{-|w|}}|w,w\rangle$.
+Alice uses the scaffold FMS effects, actual graph projections, refinements
+and column partitions of Lemma~\ref{lem:four}; Bob uses the prescribed
+opposite FMS effects and the transposed transferred centralizer products.
+The row factor is the finite maximally entangled ancilla of
+Lemma~\ref{lem:rows}. These simultaneous effects were checked in the
+compiler proof. The marginal entropy is
+$H(\mu)+S(h_F)+\log_2q+\log_2 3+\log_2d_{\max}<\infty$.
+
+Finally finite-dimensional perfect play would extract four isometries with mutually orthogonal ranges on one nonzero finite-dimensional root space. Their range dimensions would sum to four times the dimension of that space, which is impossible. The argument applies to every input, whether or not it has a witness.
+\end{proof}
+
+Together with Section~\ref{sec:upper}, this proves both completeness statements in Theorem~A. The value-one promise is established next. For the promise version, the reduction maps every input into that promise; the unrestricted $\Sigma^0_2$ membership predicate restricts to it, giving promise-problem completeness. The construction can be made syntactically nonsynchronous and non-imitation on every input by adding a fresh binary question to each side, accepting every pair involving it. Either answer then has the same nonempty allowed-answer support against every opposite question, which violates the imitation separation condition. This addition does not change perfection or the value-one property.
+
+\paragraph{Size of the finite game.}
+Here is a coarse order-of-magnitude bound, independent of the witness $q$.
+Let $g=|\Gamma|$, let $N_e$ count the named graph projections, rows and
+word prefixes after endpoint translation, and let $b_e$ bound the bit
+length of their rational coefficients. The lookup table has at most
+$2(g+1)g^2$ entries, so unshared explicit polynomials give
+$N_e=\operatorname{poly}(g)$ for this fixed list of operator relations.
+Denominator clearing and signed repetitions give row dimension
+$d_{\max}\leq2^{O(N_e(b_e+\log(N_e+1)))}$.
+The scalar contexts, column questions and marginal bindings are polynomial
+in $N_e,d_{\max}$, so the padded question count $Q_e$ and maximum answer
+count obey the same coarse exponential bound. An explicit predicate table
+is polynomial in those two counts and has the same exponential order.
+Thus the effective compilation depends on the hardwired program, never on
+its chosen prime or running time. For scale, the bundled minimal
+one-isometry example already has $748$ rows and $27\,991$ questions per
+party; it is not a size claim for the full reduction.

@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+paper/build/
+paper/revision/
+verification/generated/
+verification/compiler/generated/

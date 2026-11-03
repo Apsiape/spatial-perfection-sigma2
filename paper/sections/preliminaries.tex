@@ -1,0 +1,66 @@
+\section{Preliminaries}\label{sec:prelim}\label{sec:support}
+A finite rational Boolean game is a finite list of questions and answers, a rational distribution $\pi(x,y)$, and a predicate $V(a,b\mid x,y)\in\{0,1\}$. A spatial strategy consists of positive operator-valued measurements (POVMs) $E_{a|x}$ and $F_{b|y}$ and a normal state, represented by a positive trace-class density $\rho$ of trace one, on $\HH_A\otimes\HH_B$. Its winning probability is
+\[
+ \sum_{xyab}\pi(x,y)V(a,b\mid x,y)\Tr\rho(E_{a|x}\otimes F_{b|y}).
+\]
+We write $C_q,C_{qs},C_{qc}$ for finite-dimensional, normal spatial, and commuting correlations. For a strategy $\mathcal S$, write $\omega(G,\mathcal S)$ for the displayed
+winning probability and $\operatorname{loss}_G(\mathcal S)=1-\omega(G,\mathcal S)$.
+The set $\perf_{\qs}$ consists of games with a perfect normal spatial
+strategy. Its stratum $\perf_{\qs}(\kappa)$ requires a perfect pure strategy
+whose largest Schmidt probability is at least $1/\kappa$.
+The set $\perf_{\finS}$ requires a perfect strategy with finite marginal
+entropy. The value $\omega_q$ is the supremum over $C_q$. Finite Schmidt truncations show that $C_q$ and $C_{qs}$ have the same closure and the same supremum for every Bell functional. Entropy uses logarithms to base two:
+$S(h)=-\Tr(h\log_2h)$ and $H(p)=-\sum_i p_i\log_2p_i$, with $0\log_2 0=0$.
+A projection-valued measurement (PVM) is a POVM consisting of orthogonal
+projections. Write $|\Phi_d\rangle=d^{-1/2}\sum_{j=0}^{d-1}|j,j\rangle$
+for a finite maximally entangled vector. Vectorization of an operator $T$
+is $|T\rangle\!\rangle=\sum_{ij}T_{ij}|i,j\rangle$ when this sum is square
+summable. A purification is a unit vector with the given state as its
+partial trace over an added environment.
+
+The set $\Sigma^0_2$ consists of predicates $\exists n\,\forall t\,R(e,n,t)$ with decidable $R$. The class $\Pi^0_1$ consists of universal decidable predicates. All encodings and reductions in this paper are effective finite encodings and computable many-one reductions. Completeness is for an unrestricted finite scenario, not one fixed question-and-answer size.
+
+\paragraph{Fact 2.1 (pure components).}
+If a mixed normal strategy is perfect, write $\rho=\sum_j\lambda_j|\psi_j\rangle\langle\psi_j|$. Each losing event is positive. Its expectation vanishes in every component with $\lambda_j>0$, so every such component is perfect with the same measurements. Trace-class marginals have separable support. Thus all arguments may be made on separable state supports.
+
+\paragraph{Fact 2.2 (matching and support).}
+For effects on opposite sides, perfect binary matching gives, on a purification $\Omega$,
+\[
+ 0=\langle E+F-2EF\rangle
+ =\langle(E-F)^2+(E-E^2)+(F-F^2)\rangle.
+\]
+Each positive term annihilates $\Omega$. If $T$ is the coefficient operator of the pure vector on the chosen Schmidt cut, matching gives $ET=T F^{\mathsf T}$; dense coefficient range first makes the local state support reducing. On that support the effects are projections and commute with the marginal density. A positive operator $B$ with $\Tr(hB)=0$ for faithful $h$ is zero, since $B^{1/2}h^{1/2}=0$ and $h^{1/2}$ has dense range.
+
+\paragraph{Fact 2.3 (sharp compressions and joint measurements).}
+If $PEP$ is a projection for an effect $E$ and support projection $P$, positivity shows that $E$ acts as identity on its range and zero on its kernel inside $P\HH$. Hence $E$ reduces the support. A POVM with sharp coarse marginals is their joint spectral measurement: each fine effect is supported in the corresponding marginal ranges, and summation gives the commuting products. These facts apply after compression before projectivity is used.
+
+\paragraph{Fact 2.4 (synchronization and forbidden events).}
+We call a projection synchronized when its binary question is perfectly matched to the corresponding opposite question. If synchronized projections satisfy $P_A^{\rm sync}\Omega=P_B^{\rm sync}\Omega$ and a forbidden event gives $Q_AP_B^{\rm sync}\Omega=0$, dense Schmidt range gives the local identity $Q_AP_A^{\rm sync}=0$. The arguments work on either party and on purifications of mixed states.
+
+Table~\ref{tab:notation} collects the notation.
+
+\begin{longtable}{@{}p{.32\linewidth}p{.61\linewidth}@{}}
+\caption{Notation used throughout the proof. Distinct fonts and subscripts
+separate question names, state spaces and operators.}\label{tab:notation}\\
+\toprule Symbol & Meaning\\\midrule\endfirsthead
+\toprule Symbol & Meaning\\\midrule\endhead
+$\kappa,D_{\rm Sch}$ & Schmidt stratum integer and normalized amplitude operator\\
+$D_{{\rm esc},n}$ & escaping-mass example in Section~\ref{sec:discussion}\\
+$\mathsf R_i,\mathsf C_j,\mathsf T_x,\mathsf B_y$ & flagged magic-square questions\\
+$P_{\circ},\KK$ & root projection and root multiplicity space\\
+$P_{\rm mag},h_{\rm mag}$ & magic support and its density block\\
+$T_f,T_{\rm mag},T_{\rm cal},\Delta$ & flag/magic coefficient blocks, their calibrated diagonal and its sign reflection\\
+$U_x,U_y;P_x,P_y$ & cyclic coordinate shifts; zero-column and zero-row projections\\
+$J_{\rm W},K_{\rm W},Z_{\rm clk}$ & Weyl pair and central clock phase\\
+$W,C_{\rm ctr},P_{\rm ret},T_{\rm inv}$ & coordinate clock, counter, return pulse and bounded reader inverse\\
+$P_c$ & tableau symbol projections, $c\in\Gamma$\\
+$e_g,M_g,w_g,v$ & scaffold corners, magic blocks, single bridges and their chain\\
+$L_r$ & decoded copy of a typed label $L$ at corner $e_r$\\
+$\mathcal H_{\rm base},F_i,G_{ij}$ & graph base space, frame projections and graph projections\\
+$B_{ij},s_{\rm par}$ & parameter-binding projections and its reflection label\\
+$P_\triangle,\Pi_t,\mathcal I_t$ & triangle projection, row-column partition and column isometries\\
+$h_{\rm old},h^{[m]}$ & marginal before row ancilla; truncated Fock/Weyl density\\
+$C_{\rm abs}$ & sum of absolute Bell coefficients\\
+$\mathcal S,\omega(G,\mathcal S)$ & strategy and its winning probability\\
+\bottomrule
+\end{longtable}
