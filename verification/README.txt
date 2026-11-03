@@ -1,4 +1,4 @@
-Verification bundle, Version 1.0.0, November 2026
+Verification bundle, Version 1.1.0, November 2026
 
 Run commands from verification/ with Python 3 on Windows, Linux or macOS:
   python review/check_good_root.py
@@ -38,6 +38,10 @@ Scope and fresh results
 - minimal_compile.py: four bridges and one modular isometry; zero extra
   transported labels. 7 input polynomials, 34 words, 887 projection variables,
   748 projection rows, 27991 questions per party, at most 256 answers.
+  This is the minimal compiler instance (four bridges, one modular isometry,
+  no transported labels) and the only compiled game. The full reduction game
+  of Theorem 7.1, with its ten transported labels and the computation
+  tableau, was not compiled.
   Exact row contractions for cutoffs m=0..3 show only P_source failing.
   L=2,d=16; row event loss=t_m/46464; game loss=t_m/36404361907584.
 - minimal_structural.py: exact FMS probabilities in Q(sqrt(2)); 2472 old

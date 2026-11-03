@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: Please cite the paper; this distribution supplies its source and finite checks.
 type: software
 title: "Perfect play with spatial quantum strategies is Σ⁰₂-complete"
-version: 1.0.0
-doi: '10.5281/zenodo.23910987'
+version: 1.1.0
+doi: '10.5281/zenodo.23910986'
 date-released: '2026-11-03'
 license:
 - CC-BY-4.0
@@ -36,9 +36,9 @@ preferred-citation:
     given-names: Nidhal
     orcid: https://orcid.org/0009-0005-6534-1118
   year: 2026
-  version: 1.0.0
-  doi: '10.5281/zenodo.23910987'
-  notes: 'Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md.'
+  version: 1.1.0
+  doi: '10.5281/zenodo.23910986'
+  notes: 'Preprint. It has not been peer reviewed. Version 1.1.0; the DOI above is the concept DOI for all versions, and version 1.0.0 is 10.5281/zenodo.23910987. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md.'
 references:
 - type: generic
   title: 'Perfect play in a finite nonlocal game requires infinite entanglement entropy'
@@ -46,3 +46,9 @@ references:
 - type: generic
   title: 'Finite games that read the type of a von Neumann algebra'
   doi: '10.5281/zenodo.23787124'
+- type: generic
+  title: 'A finite game that normal hyperfinite strategies approach but never win'
+  doi: '10.5281/zenodo.23816141'
+- type: generic
+  title: 'Perfect play has different arithmetical complexity in semifinite and type III algebras'
+  doi: '10.5281/zenodo.23925092'

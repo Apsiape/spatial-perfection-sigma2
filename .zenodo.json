@@ -2,7 +2,7 @@
   "title": "Perfect play with spatial quantum strategies is Σ⁰₂-complete",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publication_date": "2026-11-03",
   "creators": [
     {
@@ -27,7 +27,7 @@
   "access_right": "open",
   "license": "cc-by-4.0",
   "language": "eng",
-  "notes": "Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0.",
+  "notes": "Preprint. It has not been peer reviewed. Version 1.1.0; version 1.0.0 is 10.5281/zenodo.23910987. Text: CC BY 4.0. Scripts: MIT or Apache 2.0.",
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.23902656",
@@ -36,6 +36,16 @@
     },
     {
       "identifier": "10.5281/zenodo.23787124",
+      "scheme": "doi",
+      "relation": "references"
+    },
+    {
+      "identifier": "10.5281/zenodo.23816141",
+      "scheme": "doi",
+      "relation": "references"
+    },
+    {
+      "identifier": "10.5281/zenodo.23925092",
       "scheme": "doi",
       "relation": "references"
     }
